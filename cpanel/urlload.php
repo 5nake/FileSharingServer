@@ -49,23 +49,23 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 <div>
 <form action="#" method="post">
  <div class="form-group">
- <label for="name">Dateiname</label>
- <input type="text" class="form-control" id="name" name="name" placeholder="Dateiname">
+ <label for="name"><?php echo TRANS_filename;?></label>
+ <input type="text" class="form-control" id="name" name="name" placeholder="<?php echo TRANS_filename;?>">
  </div>
  <div class="form-group">
- <label for="pass">Passwort (kann auch leer gelassen werden)</label>
- <input type="password" name="password" id="pass" class="form-control" placeholder="Passwort">
+ <label for="pass"><?php echo TRANS_passwordcanbeempty;?></label>
+ <input type="password" name="password" id="pass" class="form-control" placeholder="<?php echo TRANS_pass;?>">
  </div>
  <div class="form-group">
- <label for="url">URL</label>
- <input id="url" type="text" name="link" class="form-control" placeholder="URL">
+ <label for="url"><?php echo TRANS_url;?></label>
+ <input id="url" type="text" name="link" class="form-control" placeholder="<?php echo TRANS_url;?>">
  </div>
- <button type="submit" class="btn btn-default">Absenden</button>
+ <button type="submit" class="btn btn-default"><?php echo TRANS_submit;?></button>
 </form>
 </div>
 <br/>
 <p><?php echo $result; ?></p>
-<p>Link: <?php echo $link; ?></p>
+<p><?php echo TRANS_link;?>: <?php echo $link; ?></p>
 </body>
 </html>
 
