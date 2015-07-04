@@ -38,7 +38,7 @@ Upload all files to your webserver. Make sure that you change the config in conf
 That's all.
 Contol panel is online at [yourdomain.example]/cpanel
 
-Warning
+Security
 =============
 
-The passwords of the sharings are currently not encrypted!
+The passwords of the sharings are hashed via sha512
