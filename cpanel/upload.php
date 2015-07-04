@@ -1,4 +1,6 @@
 <?php 
+include('../config.php');
+include('../locales/'.LANGUAGE);
 $ausgabe = "";
 if(isset($_FILES['userfile']['size'])) {
 	$passlink = "";
@@ -9,8 +11,7 @@ if(isset($_FILES['userfile']['size'])) {
 	$name = $_FILES['userfile']['name'];
 	$debug[name] = $name;
 	$debug[uploadfile] = $uploadfile;
-	include('../config.php');
-	include('../locales/'.LANGUAGE);
+	
 	$db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
 	if ($db->connect_errno) {
 		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
@@ -47,13 +48,13 @@ if(isset($_FILES['userfile']['size'])) {
 <body>
 <form enctype="multipart/form-data" action="#" method="POST">
     <!-- MAX_FILE_SIZE muss vor dem Dateiupload Input Feld stehen -->
-    <input type="hidden" name="MAX_FILE_SIZE" value="<?php  echo MAXUPLOADSIZE ;?>" />
+    <input type="hidden" name="MAX_FILE_SIZE" value="<?php  echo (MAXUPLOADSIZE) ;?>" />
     <!-- Der Name des Input Felds bestimmt den Namen im $_FILES Array -->
-    <?php echo TRANS_uploadthisfile ;?>: <input name="userfile" type="file" />
-    <p><?php echo TRANS_pass ;?>: <input type="text" name="pass" /></p>
+    <?php echo (TRANS_uploadthisfile) ;?>: <input name="userfile" type="file" />
+    <p><?php echo (TRANS_pass) ;?>: <input type="text" name="pass" /></p>
     <input type="submit" value="Upload starten!" />
 </form>
 <h1><?php echo $ausgabe; ?></h1>
-<h1><?php echo TRANS_link ;?>: <?php echo $link; ?></h1>
+<h1><?php echo (TRANS_link) ;?>: <?php echo $link; ?></h1>
 </body>
 </html>

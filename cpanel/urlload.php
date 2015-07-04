@@ -1,10 +1,12 @@
 <?php
+include('../config.php');
+include('../locales/'.LANGUAGE);
 $link = "Sichtbar nach Eingabe";
 $debug[request-data] = $_POST;
 if(isset($_POST['name']) and isset($_POST['link'])) {
 	$debug[setnameandlink] = "OK";
 	$passlink = ".php";
-	include('../config.php');
+	
 	$db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
 	if ($db->connect_errno) {
 		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
