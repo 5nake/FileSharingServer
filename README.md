@@ -49,7 +49,7 @@ Language
 
 Available translations: en_EN, de_DE
 (The translations are located in /locales)
-You can send me translations. Upload them to your File Sharing Server and submit the link as an issue on this GitHub repository.
+You can send me translations. Upload them to your File Sharing Server and submit the link as an translation issue on this GitHub repository.
 
 Miscellaneous
 =============
