@@ -1,7 +1,7 @@
 <?php
 include('../config.php');
 include('../locales/'.LANGUAGE);
-$link = "Sichtbar nach Eingabe";
+$link = "";
 $debug[request-data] = $_POST;
 if(isset($_POST['name']) and isset($_POST['link'])) {
 	$debug[setnameandlink] = "OK";
