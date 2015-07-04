@@ -22,6 +22,7 @@ if(isset($_POST['file'])) {
 			if(file_exists("./files/".$uid)) {
 				$status[file] = "OK";
 				getfile($uid, $result[checkfile][filename]);
+				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='55977503944bf6.56258034';");
 			} else {
 				$status[file] = "NOT OK";
 				
@@ -39,7 +40,7 @@ if(isset($_POST['file'])) {
 			if(file_exists("./files/".$uid)) {
 				$status[file] = "OK";
 				getfile($uid, $result[checkfile][filename]);
-				$db->query("UPDATE `u328395420_dl`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='55977503944bf6.56258034';");
+				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='55977503944bf6.56258034';");
 			} else {
 				
 				$ecode = "1";
