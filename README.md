@@ -47,9 +47,9 @@ The passwords of the sharings are hashed via sha512.
 Language
 =============
 
-Available translation: en_EN, de_DE
-You can send me translations. (The translations are located in /locales)
-Upload them to your File Sharing Server and send me the link via mail (bjarne@bjarnerest.de).
+Available translations: en_EN, de_DE
+(The translations are located in /locales)
+You can send me translations. Upload them to your File Sharing Server and send me the link via mail (bjarne@bjarnerest.de).
 
 Miscellaneous
 =============
