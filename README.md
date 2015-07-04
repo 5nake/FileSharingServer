@@ -2,6 +2,14 @@
 
 With this project, you can easily upload files to your PHP webserver (requires MySQL).
 
+Features
+=============
+
+You can upload your files or let the server download them from URL.
+The files can be password protected.
+
+
+
 Installation
 =============
 
@@ -25,5 +33,12 @@ Run this SQL-Script on your MySQL server.
 Uploading files to webserver
 -------------
 
-Upload all files to your webserver. Make sure that you change the databases in download.php, cpanel/urlload.php and cpanel/upload.php. 
+Upload all files to your webserver. Make sure that you change the config in config.php
 
+That's all.
+Contol panel is online at [yourdomain.example]/cpanel
+
+Warning
+=============
+
+The passwords of the sharings are currently not encrypted!
