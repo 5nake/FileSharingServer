@@ -4,7 +4,7 @@ echo '<!DOCTYPE html>
 		<body>';
 
 include('../config.php');
-include('../locales/'.LANGUAGE.".php");
+include('../locales/'.LANGUAGE);
 $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
 if ($db->connect_errno) {
 	$status[db] = "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;

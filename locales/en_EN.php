@@ -31,6 +31,7 @@ define(TRANS_submit, "Submit");
 define(TRANS_link, "Link");
 define(TRANS_uploadthisfile, "Upload this file");
 define(TRANS_maxuploadlimitis, "The max. upload limit is ");
+define(TRANS_fileshared, "Somebody has shared a file with you");
 
 // files listing
 define(TRANS_fileonserver, "File on server");
@@ -40,4 +41,43 @@ define(TRANS_delete, "Delete");
 define(TRANS_deletefile, "Delete file");
 define(TRANS_ok, "OK");
 define(TRANS_notok, "NOT OK");
+
+// E-Mail
+define(TRANS_senddata, "Send data via E-Mail");
+define(TRANS_emailadress, "E-Mailadress");
+define(TRANS_notrequired, " (not required) ");
+define(TRANS_sendwithpassword, "Send with password");
+define(TRANS_emailname, "Name of the recipient");
+define(TRANS_mailpass, '
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<title>'.TRANS_fileshared.'</title>
+				</head>
+				<body>
+				<p><em>'.TRANS_hello.' [toname],</em></p>
+
+				<p>The file [filename] was shared with you.</p>
+
+				<table border="1" cellpadding="1" cellspacing="1" dir="ltr" style="width: 500px;">
+					<tbody>
+						<tr>
+							<td>Filename</td>
+							<td>Link</td>
+							<td>Password</td>
+						</tr>
+						<tr>
+							<td>[filename]</td>
+							<td>[link]</td>
+							<td>[password]</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p>&nbsp;</p>
+
+				<p>[emailsender]</p>
+				</body>
+				</html>
+				');
 ?>

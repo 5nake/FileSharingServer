@@ -1,6 +1,6 @@
 <?php 
 include('../config.php');
-include('../locales/'.LANGUAGE.".php");
+include('../locales/'.LANGUAGE);
 $ausgabe = "";
 if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 	$passlink = "";
@@ -18,6 +18,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 	}
 	if ($_FILES['userfile']['size'] > 1 and $_FILES['userfile']['size'] < (MAXUPLOADSIZE + 1) and move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
 		$ausgabe .= TRANS_uploadwassuccessful.". \n ";
+		$uploadok = true;
 	} else {
 		echo TRANS_uploadfailed.". \n";
 	}
@@ -33,9 +34,17 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 	if($db->query($query)) {
 		$link = "http://".$_SERVER[SERVER_NAME]."/preparedl".$passlink.".php?file=".$uid;
 		$ausgabe .= TRANS_filesuccessfullycreated.". \n";
+		$queryok = true;
 	} else {
 		$ausgabe .= TRANS_filecreationfailed.". \n";
 		unlink('../files/'.$uid);
+	}
+	
+	if(($_POST['sendpw'] == "yes") and $uploadok = true and $queryok = true and (isset($_POST['toname']) and $_POST['toname'] != "" and isset($_POST['email']) and $_POST['email'] != "")) {
+		require_once('mail.php');
+		$mail = new Mail();
+		
+		$mail->sendmailpass($_POST['toname'], $_POST['email'], $name, $link, $_POST['pass']);
 	}
 }
 
@@ -62,6 +71,22 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
     <label for="pass"><?php echo TRANS_pass;?></label>
     <input type="password" class="form-control" id="pass" name="pass" placeholder="<?php echo TRANS_pass;?>">
     </div>
+    <div class="form-group">
+    <label for="email"><?php echo TRANS_emailadress;?></label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo TRANS_emailadress;?>">
+    <p class="help-block"><?php echo TRANS_senddata.TRANS_notrequired;?></p>
+    </div>
+    <div class="form-group">
+    <label for="emailname"><?php echo TRANS_emailadress;?></label>
+    <input type="text" class="form-control" id="emailname" name="toname" placeholder="<?php echo TRANS_emailname;?>">
+    <p class="help-block"><?php echo TRANS_notrequired;?></p>
+    </div>
+    <div class="checkbox">
+    <label>
+      <input type="checkbox" name="sendpw" value="yes"> <?php echo TRANS_sendwithpassword;?>
+    </label>
+    <p class="help-block"><?php echo TRANS_notrequired;?></p>
+  	</div>
     <button type="submit" class="btn btn-default"><?php echo TRANS_submit;?></button>
 </form>
 <h1><?php echo $ausgabe; ?></h1>
