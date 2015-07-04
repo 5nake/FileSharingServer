@@ -16,7 +16,7 @@ if(isset($_FILES['userfile']['size'])) {
 	if ($db->connect_errno) {
 		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
-	if ($_FILES['userfile']['size'] < (MAXUPLOADSIZE + 1) and move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+	if ($_FILES['userfile']['size'] > 1 and $_FILES['userfile']['size'] < (MAXUPLOADSIZE + 1) and move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
 		$ausgabe .= TRANS_uploadwassuccessful.". \n ";
 	} else {
 		echo TRANS_uploadfailed.". \n";
