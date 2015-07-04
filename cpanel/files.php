@@ -16,7 +16,7 @@ if ($db->connect_errno) {
 $allfiles = scandir('../files'); //Ordner "../files" auslesen
 echo '<style> table, td, th { border: 1px solid black; } </style>';
 echo '<table>';
-echo '<tr><th>'.TRANS_fileonserver.'</th><th>'.TRANS_fileindatabasecheck.'</th><th>'.TRANS_filename.'</th><th>'.TRANS_downloads.'</th><th>Link</th><th>'.TRANS_link.'</tr>';
+echo '<tr><th>'.TRANS_fileonserver.'</th><th>'.TRANS_fileindatabasecheck.'</th><th>'.TRANS_filename.'</th><th>'.TRANS_downloads.'</th><th>'.TRANS_link.'</th><th>'.TRANS_delete.'</th></tr>';
 foreach ($allfiles as $file) { // Ausgabeschleife
 	if($file != ".htaccess" and $file != "." and $file != ".." and $file != "SHARED FILES WILL BE IN HERE") {
 		$checkfile = $db->query("SELECT * FROM `files` WHERE '".$file."' = uid;");

@@ -14,7 +14,7 @@ define(TRANS_startdownload, "Start download");
 
 // Control panel
 // index
-define(TRANS_administration, "administration");
+define(TRANS_administration, "Administration");
 define(TRANS_viewfiles, "View files");
 define(TRANS_uploadfiles, "Upload files");
 define(TRANS_importfilesfromurl, "Import files from URL");
