@@ -22,6 +22,7 @@ if(isset($_POST['file'])) {
 			if(file_exists("./files/".$uid)) {
 				$status[file] = "OK";
 				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='".$uid."';");
+				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `last_download` = NOW() WHERE `files`.`uid` ='".$uid."';");
 				getfile($uid, $result[checkfile][filename]);
 				
 			} else {
@@ -41,6 +42,7 @@ if(isset($_POST['file'])) {
 			if(file_exists("./files/".$uid)) {
 				$status[file] = "OK";
 				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='".$uid."';");
+				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `last_download` = NOW() WHERE `files`.`uid` ='".$uid."';");
 				getfile($uid, $result[checkfile][filename]);
 				
 			} else {
