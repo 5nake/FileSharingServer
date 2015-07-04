@@ -39,4 +39,5 @@ define(TRANS_downloads, "Downloads");
 define(TRANS_delete, "Delete");
 define(TRANS_deletefile, "Delete file");
 define(TRANS_ok, "OK");
+define(TRANS_notok, "NOT OK");
 ?>
