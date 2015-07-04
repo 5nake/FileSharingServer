@@ -2,7 +2,7 @@
 include('../config.php');
 include('../locales/'.LANGUAGE);
 $ausgabe = "";
-if(isset($_FILES['userfile']['size'])) {
+if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 	$passlink = "";
 	$uid = uniqid('', true);
 	$debug[uid] = $uid;
