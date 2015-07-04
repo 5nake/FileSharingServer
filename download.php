@@ -21,8 +21,9 @@ if(isset($_POST['file'])) {
 		if($result[checkfile][auth] == "" or $result[checkfile][3] = null) {
 			if(file_exists("./files/".$uid)) {
 				$status[file] = "OK";
+				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='".$uid."';");
 				getfile($uid, $result[checkfile][filename]);
-				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='55977503944bf6.56258034';");
+				
 			} else {
 				$status[file] = "NOT OK";
 				
@@ -39,8 +40,9 @@ if(isset($_POST['file'])) {
 			if(isset($_POST['password']) and $pass = hash('sha512', $_POST['password']) == $result[checkfile][auth]) {
 			if(file_exists("./files/".$uid)) {
 				$status[file] = "OK";
+				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='".$uid."';");
 				getfile($uid, $result[checkfile][filename]);
-				$db->query("UPDATE `".DB_DATABASE."`.`files` SET `downloads` = '".($result[checkfile][downloads] + 1)."' WHERE `files`.`uid` ='55977503944bf6.56258034';");
+				
 			} else {
 				
 				$ecode = "1";
