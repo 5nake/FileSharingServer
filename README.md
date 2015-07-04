@@ -23,10 +23,12 @@ Setting up databases
 	  `filename` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
 	  `auth` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
 	  `date` date NOT NULL,
+	  `downloads` int(10) NOT NULL DEFAULT '0',
+	  `last_download` date NOT NULL,
 	  PRIMARY KEY (`id`),
 	  UNIQUE KEY `id` (`id`),
 	  UNIQUE KEY `uid` (`uid`)
-	) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 Run this SQL-Script on your MySQL server.
 
