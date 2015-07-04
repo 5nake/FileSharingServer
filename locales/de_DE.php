@@ -30,6 +30,7 @@ define(TRANS_url, "URL");
 define(TRANS_submit, "Absenden");
 define(TRANS_link, "Link");
 define(TRANS_uploadthisfile, "Diese Datei hochladen");
+define(TRANS_maxuploadlimitis, "Das maximale Uploadlimit ist ");
 
 // files listing
 define(TRANS_fileonserver, "Datei auf Server");
