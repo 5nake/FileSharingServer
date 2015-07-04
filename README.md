@@ -47,8 +47,8 @@ The passwords of the sharings are hashed via sha512.
 Language
 =============
 
-The program is in German, but you are welcome, if you can send me translations. (The translatins are located in /locales)
-An English translation will be here soon.
+Available translation: en_EN, de_DE
+You can send me translations. (The translatins are located in /locales)
 
 Miscellaneous
 =============
