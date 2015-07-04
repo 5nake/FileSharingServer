@@ -10,14 +10,15 @@ if(isset($_FILES['userfile']['size'])) {
 	$debug[name] = $name;
 	$debug[uploadfile] = $uploadfile;
 	include('../config.php');
+	include('../locales/'.LANGUAGE);
 	$db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
 	if ($db->connect_errno) {
 		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
-	if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-		$ausgabe .= "Datei ist valide und wurde erfolgreich hochgeladen.\n ";
+	if ($_FILES['userfile']['size'] < (MAXUPLOADSIZE + 1) and move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+		$ausgabe .= TRANS_uploadwassuccessful." \n ";
 	} else {
-		echo "Upload fehlgeschlagen\n";
+		echo TRANS_uploadfailed." \n";
 	}
 	if(isset($_POST['pass'])) {
 		$pass = hash('sha512', $_POST['pass']);
@@ -30,9 +31,9 @@ if(isset($_FILES['userfile']['size'])) {
 	$debug[query] = $query;
 	if($db->query($query)) {
 		$link = "http://".$_SERVER[SERVER_NAME]."/preparedl".$passlink.".php?file=".$uid;
-		$ausgabe .= "Datei erfolgreich bearbeitet! ";
+		$ausgabe .= TRANS_filesuccessfullycreated." \n";
 	} else {
-		$ausgabe .= "Dateierstellung fehlgeschlagen! ";
+		$ausgabe .= TRANS_filecreationfailed." \n";
 		unlink('../files/'.$uid);
 	}
 }
@@ -46,13 +47,13 @@ if(isset($_FILES['userfile']['size'])) {
 <body>
 <form enctype="multipart/form-data" action="#" method="POST">
     <!-- MAX_FILE_SIZE muss vor dem Dateiupload Input Feld stehen -->
-    <input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
+    <input type="hidden" name="MAX_FILE_SIZE" value="<?php  echo MAXUPLOADSIZE ;?>" />
     <!-- Der Name des Input Felds bestimmt den Namen im $_FILES Array -->
-    Diese Datei hochladen: <input name="userfile" type="file" />
-    <p>Passwort: <input type="text" name="pass" /></p>
+    <?php echo TRANS_uploadthisfile ;?>: <input name="userfile" type="file" />
+    <p><?php echo TRANS_pass ;?>: <input type="text" name="pass" /></p>
     <input type="submit" value="Upload starten!" />
 </form>
 <h1><?php echo $ausgabe; ?></h1>
-<h1>Link: <?php echo $link; ?></h1>
+<h1><?php echo TRANS_link ;?>: <?php echo $link; ?></h1>
 </body>
 </html>

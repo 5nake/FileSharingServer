@@ -41,4 +41,16 @@ Contol panel is online at [yourdomain.example]/cpanel
 Security
 =============
 
-The passwords of the sharings are hashed via sha512
+Secure the /cpanel and the /files folder with a .htaccess and .htpasswd file (see http://htaccess-generator.com/).
+The passwords of the sharings are hashed via sha512.
+
+Language
+=============
+
+The program is in German, but you are welcome, if you can send me translations. (The translatins are located in /locales)
+An English translation will be here soon.
+
+Miscellaneous
+=============
+
+You can use robots.txt for hiding the page in search engines.

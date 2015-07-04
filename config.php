@@ -7,6 +7,7 @@ define("DB_PASS", "MySQL password of the user here.");
 define("DB_DATABASE", "MySQL database here.");
 
 
-
+define(LANGUAGE, "de_DE");
+define(MAXUPLOADSIZE, "100000000"); // in bytes
 
 ?>

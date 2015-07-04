@@ -1,13 +1,17 @@
+<?php 
+include('../config.php');
+include('../locales/'.LANGUAGE);
+?>
 <!DOCTYPE html>
 <html>
 <header>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </header>
 <body>
-<h1>Administration</h1>
+<h1><?php echo TRANS_administration ; ?></h1>
 
-<a type="button" class="btn btn-default" href="files.php">Dateien anzeigen</a><br />
-<a type="button" class="btn btn-default" href="upload.php">Dateien von Computer hochladen</a>  |  
-<a type="button" class="btn btn-default" href="urlload.php">Dateien von URL herunterladen</a><br />
+<a type="button" class="btn btn-default" href="files.php"><?php echo TRANS_viewfiles ;?></a><br /><br />
+<a type="button" class="btn btn-default" href="upload.php"><?php echo TRANS_uploadfiles ;?></a>  |  
+<a type="button" class="btn btn-default" href="urlload.php"><?php echo TRANS_importfilesfromurl ?></a><br />
 </body>
 </html>

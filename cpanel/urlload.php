@@ -62,7 +62,6 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 </form>
 </div>
 <br/>
-<p>Debug: <?php print_r($debug); ?></p>
 <p><?php echo $result; ?></p>
 <p>Link: <?php echo $link; ?></p>
 </body>

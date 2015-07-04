@@ -1,5 +1,6 @@
 <?php
-
+include('../config.php');
+include('../locales/'.LANGUAGE);
 if(isset($_REQUEST['ecode'])) {
 	$ecode = $_REQUEST['ecode'];
 	$pw = $_REQUEST['pw'];
@@ -10,20 +11,20 @@ if(isset($_REQUEST['ecode'])) {
 	}
 	switch ($ecode) {
 		case 1:
-			$response = "Die Datei wurde nicht gefunden";
+			$response = TRANS_filenotfound;
 			break;
 		case 2:
-			$response = "Ein Passwort wird benötigt.";
+			$response = TRANS_passrequired;
 			break;
 		case 3:
-			$response = "Das Passwort ist falsch";
+			$response = TRANS_passwrong;
 			break;
 		case 4:
-			$response = "Keine Daten angegeben";
+			$response = TRANS_nodatareported;
 			break;
 	}
 } else {
-	$response = "Keine Daten angegeben";
+	$response = TRANS_nodatareported;
 }
 
 /* 1 = File not found.
