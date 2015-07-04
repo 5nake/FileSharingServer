@@ -15,7 +15,7 @@ if ($db->connect_errno) {
 $alledateien = scandir('../files'); //Ordner "../files" auslesen
 echo '<style> table, td, th { border: 1px solid black; } </style>';
 echo '<table>';
-echo '<tr><th>Datei auf Server</th><th>Datei auf Datenbank</th><th>Dateiname</th><th>Downloads</th><th>Link</th></tr>';
+echo '<tr><th>Datei auf Server</th><th>Datei auf Datenbank</th><th>Dateiname</th><th>Downloads</th><th>Link</th><th>L&ouml;schen</tr>';
 foreach ($alledateien as $datei) { // Ausgabeschleife
 	if($datei != ".htaccess" and $datei != "." and $datei != "..") {
 		$checkfile = $db->query("SELECT * FROM `files` WHERE '".$datei."' = uid;");
@@ -32,6 +32,7 @@ foreach ($alledateien as $datei) { // Ausgabeschleife
 			} else {
 				echo '<th>http://'.$_SERVER[SERVER_NAME].'/preparedl-pass.php?file='.$result[checkfile][uid].'</th>'; // Link mit PW
 			}
+			echo '<th><a href="delete.php?file='.$result[checkfile][uid].'">Datei L&ouml;schen</a></th>'; // Dateiname
 		}
 		echo '</td>';
 		// echo $datei."<br />"; //Ausgabe Einzeldatei
