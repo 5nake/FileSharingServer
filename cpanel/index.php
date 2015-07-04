@@ -1,6 +1,6 @@
 <?php 
 include('../config.php');
-include('../locales/'.LANGUAGE);
+include('../locales/'.LANGUAGE.".php");
 ?>
 <!DOCTYPE html>
 <html>

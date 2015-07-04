@@ -1,7 +1,7 @@
 <?php 
 $form[uid] = $_REQUEST[file];
 include('config.php');
-include('./locales/'.LANGUAGE);
+include('./locales/'.LANGUAGE.".php");
 ?>
 <!DOCTYPE html>
 <html>

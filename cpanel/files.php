@@ -4,7 +4,7 @@ echo '<!DOCTYPE html>
 		<body>';
 
 include('../config.php');
-include('../locales/'.LANGUAGE);
+include('../locales/'.LANGUAGE.".php");
 $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
 if ($db->connect_errno) {
 	$status[db] = "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
@@ -24,7 +24,7 @@ foreach ($allfiles as $file) { // Ausgabeschleife
 		$result[checkfile] = mysqli_fetch_array($checkfile);
 		echo '<tr>';
 		echo '<th>'.$file.'</th>'; // Datei auf Server
-		if($no_of_rows[checkfile] = "1") {
+		if($no_of_rows[checkfile] == "1") {
 			echo '<th>'.TRANS_ok.'</th>'; // Datei auf Datenbank
 			echo '<th>'.$result[checkfile][filename].'</th>'; // Dateiname
 			echo '<th>'.$result[checkfile][downloads].'</th>'; // Downloads
@@ -34,6 +34,8 @@ foreach ($allfiles as $file) { // Ausgabeschleife
 				echo '<th>http://'.$_SERVER[SERVER_NAME].'/preparedl-pass.php?file='.$result[checkfile][uid].'</th>'; // Link mit PW
 			}
 			echo '<th><a href="delete.php?file='.$result[checkfile][uid].'">'.TRANS_deletefile.'</a></th>'; // Delete file
+		} else {
+			echo '<th>'.TRANS_notok.'</th></td>';
 		}
 		echo '</td>';
 		

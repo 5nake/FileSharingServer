@@ -1,6 +1,6 @@
 <?php 
 include('../config.php');
-include('../locales/'.LANGUAGE);
+include('../locales/'.LANGUAGE.".php");
 $ausgabe = "";
 if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 	$passlink = "";
