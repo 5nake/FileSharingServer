@@ -9,4 +9,5 @@ define("DB_DATABASE", "MySQL database here.");
 
 define(LANGUAGE, "en_EN".".php");
 define(MAXUPLOADSIZE, "100000000"); // in bytes
+
 ?>
