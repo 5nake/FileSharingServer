@@ -30,7 +30,7 @@ if(isset($_REQUEST['file'])) {
 	}
 	
 	$delay = ($delayqu + $delayul);
-	
+	$db->close();
 }
 
 ?>

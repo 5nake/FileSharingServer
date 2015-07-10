@@ -38,6 +38,7 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 	} else {
 		$debug[fopen] = "NOT OK";
 	}
+	$db->close();
 }
 ?>
 <!DOCTYPE html>

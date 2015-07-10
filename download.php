@@ -77,7 +77,7 @@ if(isset($_POST['file'])) {
 	}
 	
 	
-	
+	$db->close();
 } else {
 	
 	$ecode = "4";

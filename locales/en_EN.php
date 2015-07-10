@@ -25,7 +25,7 @@ define(TRANS_uploadfailed, "The upload has failed");
 define(TRANS_filesuccessfullycreated, "File successfully created");
 define(TRANS_filecreationfailed, "Filecreation failed");
 define(TRANS_filename, "Filename");
-define(TRANS_passwordcanbeempty, "Password (can be empty)");
+define(TRANS_passwordcanbeempty, "Password (may be empty)");
 define(TRANS_url, "URL");
 define(TRANS_submit, "Submit");
 define(TRANS_link, "Link");

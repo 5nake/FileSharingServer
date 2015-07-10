@@ -42,6 +42,8 @@ foreach ($allfiles as $file) { // Ausgabeschleife
 		
 	}
 };
+
+$db->close();
 echo '</table>';
 echo '</body>
 		</html>';
