@@ -52,6 +52,7 @@ define(TRANS_emailadress, "E-Mailadresse");
 define(TRANS_notrequired, " (nicht ben&ouml;tigt) ");
 define(TRANS_sendwithpassword, "Mit Passwort senden");
 define(TRANS_emailname, "Name des Empf&auml;ngers");
+define(TRANS_hello, "Hallo");
 define(TRANS_mailpass, '
 				<!DOCTYPE html>
 				<html>

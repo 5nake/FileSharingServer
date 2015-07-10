@@ -1,6 +1,6 @@
 <?php
 include('../config.php');
-include('../locales/'.LANGUAGE);
+include('../locales/'.LANGUAGE.'.php');
 $link = "";
 $debug[request-data] = $_POST;
 if(isset($_POST['name']) and isset($_POST['link'])) {

@@ -48,6 +48,7 @@ define(TRANS_emailadress, "E-Mailadress");
 define(TRANS_notrequired, " (not required) ");
 define(TRANS_sendwithpassword, "Send with password");
 define(TRANS_emailname, "Name of the recipient");
+define(TRANS_hello, "Hello");
 define(TRANS_mailpass, '
 				<!DOCTYPE html>
 				<html>

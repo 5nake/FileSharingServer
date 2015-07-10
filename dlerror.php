@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-include('./locales/'.LANGUAGE);
+include('./locales/'.LANGUAGE.'.php');
 if(isset($_REQUEST['ecode'])) {
 	$ecode = $_REQUEST['ecode'];
 	$pw = $_REQUEST['pw'];
