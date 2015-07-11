@@ -69,12 +69,14 @@ define(TRANS_mailpass, '
 						</tr>
 						<tr>
 							<td>[filename]</td>
-							<td>[link]</td>
+							<td>[filename]</td>
+							<td><a href="[link]">Click here</a></td>
 							<td>[password]</td>
 						</tr>
 					</tbody>
 				</table>
-
+				<p>You can also use this link: </p><br />
+				<p>[link]</p>
 				<p>&nbsp;</p>
 
 				<p>[emailsender]</p>
