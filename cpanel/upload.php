@@ -32,7 +32,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 	}
 	$debug[query] = $query;
 	if($db->query($query)) {
-		$link = "http://".$_SERVER[SERVER_NAME]."/preparedl".$passlink.".php?file=".$uid;
+		$link = "http://".DOMAIN."/preparedl".$passlink.".php?file=".$uid;
 		$ausgabe .= TRANS_filesuccessfullycreated.". \n";
 		$queryok = true;
 	} else {

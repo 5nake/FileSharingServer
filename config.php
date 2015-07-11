@@ -6,6 +6,7 @@ define(DB_USER, "MySQL user here.");
 define(DB_PASS, "MySQL password of the user here.");
 define(DB_DATABASE, "MySQL database here.");
 
+define(DOMAIN, "Your domail for download links here");
 define(LANGUAGE, "en_EN");
 define(MAXUPLOADSIZE, "100000000"); // in bytes
 define(EMAILSENDER, "Your E-Mail senders name here");

@@ -29,9 +29,9 @@ foreach ($allfiles as $file) { // Ausgabeschleife
 			echo '<th>'.$result[checkfile][filename].'</th>'; // Dateiname
 			echo '<th>'.$result[checkfile][downloads].'</th>'; // Downloads
 			if($result[checkfile][auth] == "" or $result[checkfile][auth] = null) {
-			echo '<th>http://'.$_SERVER[SERVER_NAME].'/preparedl.php?file='.$result[checkfile][uid].'</th>'; // Link ohne Passwort
+			echo '<th>http://'.DOMAIN.'/preparedl.php?file='.$result[checkfile][uid].'</th>'; // Link ohne Passwort
 			} else {
-				echo '<th>http://'.$_SERVER[SERVER_NAME].'/preparedl-pass.php?file='.$result[checkfile][uid].'</th>'; // Link mit PW
+				echo '<th>http://'.DOMAIN.'/preparedl-pass.php?file='.$result[checkfile][uid].'</th>'; // Link mit PW
 			}
 			echo '<th><a href="delete.php?file='.$result[checkfile][uid].'">'.TRANS_deletefile.'</a></th>'; // Delete file
 		} else {

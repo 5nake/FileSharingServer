@@ -28,8 +28,9 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 	}
 	if($db->query($query)) {
 		$debug[querystat] = "OK";
+		$queryok = true;
 		$result = "Datei erfolgreich bearbeitet!";
-		$link = "http://".$_SERVER[SERVER_NAME]."/preparedl".$passlink."?file=".$uid;
+		$link = "http://".DOMAIN."/preparedl".$passlink."?file=".$uid;
 	} else {
 		$debug[querystat] = "NOT OK";
 		$result = "Dateierstellung fehlgeschlagen!";
@@ -39,6 +40,16 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 		$debug[fopen] = "NOT OK";
 	}
 	$db->close();
+	
+	
+	if(isset($_POST['toname']) and $_POST['toname'] != "" and isset($_POST['email']) and $_POST['email'] != "") {
+	if(($_POST['sendpw'] == "yes") and $queryok = true and (isset($_POST['toname']) and $_POST['toname'] != "" and isset($_POST['email']) and $_POST['email'] != "")) {
+		require_once('mail.php');
+		$mail = new Mail();
+	
+		$mail->sendmailpass($_POST['toname'], $_POST['email'], $name, $link, $_POST['pass']);
+	}
+	}
 }
 ?>
 <!DOCTYPE html>
