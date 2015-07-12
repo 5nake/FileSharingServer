@@ -86,4 +86,36 @@ define(TRANS_mailpass, '
 				</body>
 				</html>
 				');
+
+define(TRANS_mailwithoutpass, '
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<title>'.TRANS_fileshared.'</title>
+				</head>
+				<body>
+				<p><em>'.TRANS_hello.' [toname],</em></p>
+
+				<p>Die Datei [filename] wurde mit dir geteilt.</p>
+
+				<table border="1" cellpadding="1" cellspacing="1" dir="ltr" style="width: 500px;">
+					<tbody>
+						<tr>
+							<td>Dateiname</td>
+							<td>Link</td>
+						</tr>
+						<tr>
+							<td>[filename]</td>
+							<td><a href="[link]">Hier klicken</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<p>Alternativ kannst du diesen Link verwenden: </p><br />
+				<p>[link]</p>
+				<p>&nbsp;</p>
+
+				<p>[emailsender]</p>
+				</body>
+				</html>
+				');
 ?>

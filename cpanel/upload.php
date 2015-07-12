@@ -45,7 +45,12 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 		$mail = new Mail();
 		
 		$mail->sendmailpass($_POST['toname'], $_POST['email'], $name, $link, $_POST['pass']);
-	}
+	}else if(($_POST['sendpw'] == "" or isset($_POST['sendpw']) == false) and $queryok = true and (isset($_POST['toname']) and $_POST['toname'] != "" and isset($_POST['email']) and $_POST['email'] != "")) {
+				require_once('mail.php');
+				$mail = new Mail();
+				
+				$mail->sendmail($_POST['toname'], $_POST['email'], $name, $link);
+			}
 	$db->close();
 }
 
