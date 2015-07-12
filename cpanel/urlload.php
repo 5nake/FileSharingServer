@@ -84,7 +84,7 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 
 <style type="text/css">
     .email-panel{
-    	margin: 50px;
+    	margin: 20px;
     }
 </style>
 </header>
@@ -103,6 +103,7 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
  	<label for="url"><?php echo TRANS_url;?></label>
  	<input id="url" type="text" name="link" class="form-control" placeholder="<?php echo TRANS_url;?>">
  </div>
+ <div class="email-panel">
  <div class="panel panel-default">
  <div class="panel-body">
  <p><?php echo TRANS_senddata.TRANS_notrequired;?></p>
@@ -118,6 +119,7 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
     <label>
       <input type="checkbox" name="sendpw" value="yes"> <?php echo (TRANS_sendwithpassword);?>
     </label>
+</div>
 </div>
 </div>
 </div>

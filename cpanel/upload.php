@@ -69,7 +69,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 
 <style type="text/css">
     .email-panel{
-    	margin: 50px;
+    	margin: 20px;
     }
 </style>
 </head>
@@ -86,6 +86,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
     <label for="pass"><?php echo TRANS_pass;?></label>
     <input type="password" class="form-control" id="pass" name="pass" placeholder="<?php echo TRANS_pass;?>">
     </div>
+     <div class="email-panel">
      <div class="panel panel-default">
  	<div class="panel-body">
  	<p><?php echo TRANS_senddata.TRANS_notrequired;?></p>
@@ -101,6 +102,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
     <label>
       <input type="checkbox" name="sendpw" value="yes"> <?php echo (TRANS_sendwithpassword);?>
     </label>
+  	</div>
   	</div>
   	</div>
   	</div>
