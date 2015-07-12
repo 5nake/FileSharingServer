@@ -33,18 +33,25 @@ foreach ($allfiles as $file) { // Ausgabeschleife
 			} else {
 				echo '<th>http://'.DOMAIN.'/preparedl-pass.php?file='.$result[checkfile][uid].'</th>'; // Link mit PW
 			}
-			echo '<th><a href="delete.php?file='.$result[checkfile][uid].'">'.TRANS_deletefile.'</a></th>'; // Delete file
+			echo '<th><a href="delete.php?file='.$result[checkfile][uid].'&method=fdb">'.TRANS_deletefile.'</a></th>'; // Delete file
 		} else {
-			echo '<th>'.TRANS_notok.'</th></td>';
+			echo '<th>'.TRANS_notok.'</th><th>/</th><th>/</th><th>/</th><th><a href="delete.php?file='.$file.'&method=f">'.TRANS_deletefile.'</a></th></td>';
 		}
 		echo '</td>';
-		
+		$editedfiles .= $file;
 		
 	}
 };
 
-$db->close();
+
+
+
+echo '</td>';
 echo '</table>';
+
+
+$db->close();
+
 echo '</body>
 		</html>';
 ?>
