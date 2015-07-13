@@ -1,7 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+    .email-panel{
+    	margin: 20px;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+<div class="email-panel">
+ <div class="panel panel-default">
+ <div class="panel-body">
 <?php
-echo '<!DOCTYPE html>
-		<html>
-		<body>';
 
 include('../config.php');
 include('../locales/'.LANGUAGE.'.php');
@@ -52,6 +75,10 @@ echo '</table>';
 
 $db->close();
 
-echo '</body>
-		</html>';
+
 ?>
+</div>
+</div>
+</div>
+</body>
+</html>
