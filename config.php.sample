@@ -1,4 +1,5 @@
 <?php 
+define(SETUP_COMPLETE, "NO");
 
 // Database setup
 define(DB_HOST, "MySQL host here.");
