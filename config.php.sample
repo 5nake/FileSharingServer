@@ -6,6 +6,7 @@ define(DB_HOST, "MySQL host here.");
 define(DB_USER, "MySQL user here.");
 define(DB_PASS, "MySQL password of the user here.");
 define(DB_DATABASE, "MySQL database here.");
+define(DB_PREFIX, "Table prefix here.");
 
 define(DOMAIN, "Your domail for download links here");
 define(LANGUAGE, "en_EN");

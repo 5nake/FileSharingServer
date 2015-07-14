@@ -31,7 +31,7 @@ class Mail {
 		// verschicke die E-Mail
 		mail($to, $subject, $message, $header);
 		}else {
-			sendmail($toname, $tomail, $filename, $link);
+			$this->sendmail($toname, $tomail, $filename, $link);
 		}
 				
 	}
