@@ -31,6 +31,7 @@ define(TRANS_submit, "Absenden");
 define(TRANS_link, "Link");
 define(TRANS_uploadthisfile, "Diese Datei hochladen");
 define(TRANS_maxuploadlimitis, "Das maximale Uploadlimit ist ");
+define(TRANS_needvalidurl, "Die URL muss mit 'http://' oder 'https://' beginnen");
 
 
 // files listing

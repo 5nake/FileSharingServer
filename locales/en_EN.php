@@ -32,6 +32,7 @@ define(TRANS_link, "Link");
 define(TRANS_uploadthisfile, "Upload this file");
 define(TRANS_maxuploadlimitis, "The max. upload limit is ");
 define(TRANS_fileshared, "Somebody has shared a file with you");
+define(TRANS_needvalidurl, "The URL need to begin with 'http://' or 'https://'");
 
 // files listing
 define(TRANS_fileonserver, "File on server");
@@ -115,4 +116,36 @@ define(TRANS_mailwithoutpass, '
 				</body>
 				</html>
 				');
+				
+
+// setup
+define(TRANS_setup, "Setup");
+
+define(TRANS_languagesetup, "Language setup");
+define(TRANS_language, "Language");
+
+define(TRANS_databasesetup, "Database setup");
+define(TRANS_dbhost, "Host");
+define(TRANS_dbuser, "User");
+define(TRANS_dbdb, "Database");
+define(TRANS_dbprefix, "Prefix");
+define(TRANS_dbprefixexplanation, "If you are running multiple File Sharing Server installations in one database");
+
+define(TRANS_sharingsetup, "Sharing setup");
+define(TRANS_websitedomain, "Website domain");
+define(TRANS_sendersemail, "Senders E-Mail adress");
+define(TRANS_sendersemailexplanation, "The notifications 'Somebody has shared ... with you' will be sent from this E-Mail adress");
+define(TRANS_domainexplanation, "Need to begin with 'http://' or 'https://'");
+define(TRANS_maxuploadsize, "Max. upload size");
+define(TRANS_inbytes, "in bytes (1MB = 1.000.000bytes)");
+define(TRANS_lasterror, "Last error: ");
+define(TRANS_dbloginfailed, "Database login failed");
+define(TRANS_erroroccured, "An Error occured! Please try again!");
+
+define(TRANS_loginsetup, "Login setup");
+define(TRANS_username, "Username");
+
+// credits
+define(TRANS_by, "by");
+define(TRANS_creditshtpasswd, "Thanks to ozanhazer for providing this function!");
 ?>
