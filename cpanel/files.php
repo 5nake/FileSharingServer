@@ -21,6 +21,7 @@
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <body>
+<div class="container">
 <div class="email-panel">
  <div class="panel panel-default">
  <div class="panel-body">
@@ -38,7 +39,7 @@ if ($db->connect_errno) {
 
 $allfiles = scandir('../files'); //Ordner "../files" auslesen
 echo '<style> table, td, th { border: 1px solid black; } </style>';
-echo '<table>';
+echo '<table class="table">';
 echo '<tr><th>'.TRANS_fileonserver.'</th><th>'.TRANS_fileindatabasecheck.'</th><th>'.TRANS_filename.'</th><th>'.TRANS_downloads.'</th><th>'.TRANS_link.'</th><th>'.TRANS_delete.'</th></tr>';
 foreach ($allfiles as $file) { // Ausgabeschleife
 	if($file != ".htaccess" and $file != "." and $file != ".." and $file != "SHARED FILES WILL BE IN HERE") {
@@ -52,9 +53,9 @@ foreach ($allfiles as $file) { // Ausgabeschleife
 			echo '<th>'.$result[checkfile][filename].'</th>'; // Dateiname
 			echo '<th>'.$result[checkfile][downloads].'</th>'; // Downloads
 			if($result[checkfile][auth] == "" or $result[checkfile][auth] = null) {
-			echo '<th>http://'.DOMAIN.'/preparedl.php?file='.$result[checkfile][uid].'</th>'; // Link ohne Passwort
+			echo '<th>'.DOMAIN.'/preparedl.php?file='.$result[checkfile][uid].'</th>'; // Link ohne Passwort
 			} else {
-				echo '<th>http://'.DOMAIN.'/preparedl-pass.php?file='.$result[checkfile][uid].'</th>'; // Link mit PW
+				echo '<th>'.DOMAIN.'/preparedl-pass.php?file='.$result[checkfile][uid].'</th>'; // Link mit PW
 			}
 			echo '<th><a href="delete.php?file='.$result[checkfile][uid].'&method=fdb">'.TRANS_deletefile.'</a></th>'; // Delete file
 		} else {
@@ -77,6 +78,7 @@ $db->close();
 
 
 ?>
+</div>
 </div>
 </div>
 </div>

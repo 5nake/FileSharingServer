@@ -42,7 +42,7 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 			$debug[querystat] = "OK";
 			$queryok = true;
 			$result = "Datei erfolgreich bearbeitet!";
-			$link = "http://".DOMAIN."/preparedl".$passlink."?file=".$uid;
+			$link = DOMAIN."/preparedl".$passlink."?file=".$uid;
 		} else {
 			$debug[querystat] = "NOT OK";
 			$result = "Dateierstellung fehlgeschlagen!";
@@ -67,7 +67,7 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
 			}
 		}
 		} else {
-			$result = "Die URL muss mit 'http://' oder mit 'https://' beginnen!";
+			$result = TRANS_needvalidurl;
 		}
 	
 	
@@ -109,7 +109,8 @@ if(isset($_POST['name']) and isset($_POST['link'])) {
  <p><?php echo TRANS_senddata.TRANS_notrequired;?></p>
  <div class="form-group">
     <label for="email"><?php echo TRANS_emailadress;?></label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo (TRANS_emailadress);?>">
+    <span class="input-group-addon" id="email-addon">@</span>
+    <input type="email" aria-describedby="email-addon" class="form-control" id="email" name="email" placeholder="<?php echo (TRANS_emailadress);?>">
     </div>
 <div class="form-group">
     <label for="emailname"><?php echo (TRANS_emailname);?></label>

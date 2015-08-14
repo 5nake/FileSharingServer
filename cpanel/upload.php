@@ -32,7 +32,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
 	}
 	$debug[query] = $query;
 	if($db->query($query)) {
-		$link = "http://".DOMAIN."/preparedl".$passlink.".php?file=".$uid;
+		$link = DOMAIN."/preparedl".$passlink.".php?file=".$uid;
 		$ausgabe .= TRANS_filesuccessfullycreated.". \n";
 		$queryok = true;
 	} else {
@@ -71,6 +71,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
     .email-panel{
     	margin: 20px;
     }
+    .container:{ 'body' };
 </style>
 </head>
 <body>
@@ -92,6 +93,7 @@ if(isset($_FILES['userfile']['size']) and $_FILES['userfile']['size'] > 1) {
  	<p><?php echo TRANS_senddata.TRANS_notrequired;?></p>
     <div class="form-group">
     <label for="email"><?php echo TRANS_emailadress;?></label>
+    <span class="input-group-addon">@</span>
     <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo (TRANS_emailadress);?>">
     </div>
     <div class="form-group">
